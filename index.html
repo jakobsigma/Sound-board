@@ -1,42 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <base href="https://cdn.jsdelivr.net/gh/genizy/soundboard@main/">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521219086088837" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-"></script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coola Mattespel Soundboard</title>
-    <script src="sounds.js" type="module"></script>
-    <script src="main.js" type="module"></script>
-    <link href="style.css" rel="stylesheet">
-</head>
 <body>
-    <div class="app">
-        <div class="header">
-            <h1>Soundboard</h1>
-            <p>Coola Mattespel</p>
-        </div>
+  <div class="sb-app">
+    <div class="scanline"></div>
 
-        <div id="controls">
-            <div class="search-wrap">
-                <span class="search-icon"></span>
-                <input id="searchInput" type="text" placeholder="Search sounds…">
-            </div>
-            <button id="toggleFavorites" class="ctrl-btn favorites-toggle">
-                ★ Favorites <span class="badge" id="favCount">0</span>
-            </button>
-            <button id="toggleButton" class="ctrl-btn overlap-toggle">
-                <span class="dot"></span> Overlap
-            </button>
-            <button id="stopButton" class="ctrl-btn stop-btn">
-                ■ Stop all
-            </button>
-        </div>
-
-        <div class="section-label" id="sectionLabel">All sounds</div>
-        <div id="soundboard"></div>
+    <div id="loader">
+      <div class="load-dots">
+        <div class="load-dot"></div>
+        <div class="load-dot"></div>
+        <div class="load-dot"></div>
+      </div>
+      <div class="loader-logo">Soundboard</div>
+      <div class="loader-sub">Coola Mattespel</div>
+      <div class="load-track"><div class="load-bar" id="loadBar"></div></div>
+      <div class="load-pct" id="loadPct">0%</div>
     </div>
+
+    <div id="main">
+      <div class="sb-header">
+        <div>
+          <div class="sb-title">Soundboard</div>
+          <div class="sb-subtitle">Coola Mattespel</div>
+        </div>
+        <div class="wave-bars" id="waveBars">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
+      </div>
+
+      <div id="controls">
+        <div class="search-wrap">
+          <span class="search-icon">⌖</span>
+          <input id="searchInput" type="text" placeholder="Search sounds…">
+        </div>
+        <button id="toggleFavorites" class="ctrl-btn favorites-toggle">
+          ★ Favorites <span class="badge" id="favCount">0</span>
+        </button>
+        <button id="toggleButton" class="ctrl-btn overlap-toggle">
+          <span class="dot"></span> Overlap
+        </button>
+        <button id="stopButton" class="ctrl-btn stop-btn">
+          ■ Stop all
+        </button>
+      </div>
+
+      <div class="vol-strip">
+        <span class="vol-icon">♫</span>
+        <span class="vol-label-text">Volume</span>
+        <input type="range" class="vol-slider" id="volSlider" min="0" max="100" step="1" value="80">
+        <div class="vol-pct" id="volPct">80%</div>
+        <button class="ctrl-btn danger-btn" id="overdriveBtn">
+          ⚡ 400% <span class="od-badge">risk</span>
+        </button>
+      </div>
+
+      <div class="section-label" id="sectionLabel">All sounds</div>
+      <div id="soundboard"></div>
+    </div>
+  </div>
 </body>
-</html>

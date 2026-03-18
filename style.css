@@ -229,20 +229,23 @@ body {
   cursor: pointer;
   display: flex; flex-direction: column; align-items: center; gap: 7px;
   text-align: center;
-  transition: filter .12s, transform .12s, box-shadow .15s;
-  filter: saturate(.75) brightness(.7);
+  transition: transform .12s, box-shadow .15s, filter .12s;
   color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.18);
+  box-shadow: 0 3px 0 rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
 }
 .sound-btn:hover {
-  filter: saturate(1) brightness(.92);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.22);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0,0,0,.35), 0 8px 20px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.3);
+  filter: brightness(1.1);
 }
-.sound-btn:active { transform: scale(.96); filter: saturate(1.1) brightness(.95); }
+.sound-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.2);
+  filter: brightness(.95);
+}
 .sound-btn.playing {
-  filter: saturate(1.2) brightness(1);
-  box-shadow: 0 0 0 2px rgba(255,255,255,.55), 0 6px 18px rgba(0,0,0,.5);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.6), 0 4px 16px rgba(0,0,0,.5);
+  filter: brightness(1.15);
   animation: btnPulse .9s ease-in-out infinite;
 }
 

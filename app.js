@@ -9062,18 +9062,18 @@ function renderSounds() {
                            const gain = globalVolume;
 
                                               if (gain <= 1) {
-                                                        // Normal volume: direct Audio API
-                             audio.volume = gain;
+                                                        audio.volume = gain;
                                                         audio.play();
                                               } else {
-                                                        // Overdrive: use Web Audio GainNode
-                             const ctx = getAudioCtx();
-                                                        const source = ctx.createMediaElementSource(audio);
-                                                        const gainNode = ctx.createGain();
-                                                        gainNode.gain.value = gain;
-                                                        source.connect(gainNode);
-                                                        gainNode.connect(ctx.destination);
-                                                        audio.play();
+                                                        const ctx = getAudioCtx();
+                                                        ctx.resume().then(() => {
+                                                            const source = ctx.createMediaElementSource(audio);
+                                                            const gainNode = ctx.createGain();
+                                                            gainNode.gain.value = gain;
+                                                            source.connect(gainNode);
+                                                            gainNode.connect(ctx.destination);
+                                                            audio.play();
+                                                        });
                                               }
 
                                               currentAudios.push(audio);
